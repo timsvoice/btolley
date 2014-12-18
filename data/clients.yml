@@ -1,3 +1,21 @@
+---
+contact:
+  department: 
+    - title: Fiction &amp; Nonfiction
+      - name: Barbara Tolley
+        email: info@btolley.com
+      - name: Joshua LaMorey
+        email: info@btolley.com
+department: 
+  - title: Fiction &amp; Nonfiction
+    name: Christine Perry
+    email: info@btolley.com
+department: 
+  - title: Children's and Young Adult
+    name: Christine Perry
+    email: info@btolley.com
+---
+
 name: Brazil: Planeta Do Brasil
 link: http://www.planetadelivros.com.br/ 
 
