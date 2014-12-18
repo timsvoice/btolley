@@ -1,1 +1,67 @@
-!function(t){"use strict";Foundation.libs.accordion={name:"accordion",version:"5.2.2",settings:{active_class:"active",multi_expand:!1,toggleable:!0},init:function(t,s,a){this.bindings(s,a)},events:function(){var s=this,a=this.S;a(this.scope).off(".fndtn.accordion").on("click.fndtn.accordion","["+this.attr_name()+"] dd > a",function(i){var e=a(this).closest("["+s.attr_name()+"]"),n=a("#"+this.href.split("#")[1]),c=a("dd > .content",e),o=t("dd",e),l=e.data(s.attr_name(!0)+"-init"),d=a("dd > .content."+l.active_class,e),r=a("dd."+l.active_class,e);if(i.preventDefault(),a(this).closest("dl").is(e)){if(l.toggleable&&n.is(d))return r.toggleClass(l.active_class,!1),n.toggleClass(l.active_class,!1);l.multi_expand||(c.removeClass(l.active_class),o.removeClass(l.active_class)),n.addClass(l.active_class).parent().addClass(l.active_class)}})},off:function(){},reflow:function(){}}}(jQuery,this,this.document);
+;(function ($, window, document, undefined) {
+  'use strict';
+
+  Foundation.libs.accordion = {
+    name : 'accordion',
+
+    version : '5.5.0',
+
+    settings : {
+      content_class: 'content',
+      active_class: 'active',
+      multi_expand: false,
+      toggleable: true,
+      callback : function () {}
+    },
+
+    init : function (scope, method, options) {
+      this.bindings(method, options);
+    },
+
+    events : function () {
+      var self = this;
+      var S = this.S;
+      S(this.scope)
+      .off('.fndtn.accordion')
+      .on('click.fndtn.accordion', '[' + this.attr_name() + '] > .accordion-navigation > a', function (e) {
+        var accordion = S(this).closest('[' + self.attr_name() + ']'),
+            groupSelector = self.attr_name() + '=' + accordion.attr(self.attr_name()),
+            settings = accordion.data(self.attr_name(true) + '-init') || self.settings,
+            target = S('#' + this.href.split('#')[1]),
+            aunts = $('> .accordion-navigation', accordion),
+            siblings = aunts.children('.'+settings.content_class),
+            active_content = siblings.filter('.' + settings.active_class);
+
+        e.preventDefault();
+
+        if (accordion.attr(self.attr_name())) {
+          siblings = siblings.add('[' + groupSelector + '] dd > '+'.'+settings.content_class);
+          aunts = aunts.add('[' + groupSelector + '] .accordion-navigation');
+        }
+
+        if (settings.toggleable && target.is(active_content)) {
+          target.parent('.accordion-navigation').toggleClass(settings.active_class, false);
+          target.toggleClass(settings.active_class, false);
+          settings.callback(target);
+          target.triggerHandler('toggled', [accordion]);
+          accordion.triggerHandler('toggled', [target]);
+          return;
+        }
+
+        if (!settings.multi_expand) {
+          siblings.removeClass(settings.active_class);
+          aunts.removeClass(settings.active_class);
+        }
+
+        target.addClass(settings.active_class).parent().addClass(settings.active_class);
+        settings.callback(target);
+        target.triggerHandler('toggled', [accordion]);
+        accordion.triggerHandler('toggled', [target]);
+      });
+    },
+
+    off : function () {},
+
+    reflow : function () {}
+  };
+}(jQuery, window, window.document));
