@@ -1,0 +1,33 @@
+/* ============================ 
+	Colors
+============================ */
+
+$gray: hsla(0,5,99%,1);
+$dark-gray: hsla(0,5,98%,1);
+$white: hsla(0,0,100%,1);
+$black: hsla(0,0,20%,1);
+$highlight: hsla(6, 85%, 57%, 1.0);
+
+/* ============================ 
+	Typography
+============================ */
+
+$body-font: "Gotham Light", Times, serif;
+$title-font: "Gotham Book", Times, serif;
+
+$heavy-text:900;
+$medium-text:400;
+$light-text:200;
+
+$underline: 0.0625rem dotted;
+
+/* ============================ 
+	Borders
+============================ */
+
+$border-thick: 0.125rem $black solid;
+$border-thin:  0.125rem $gray solid;
+
+/* ============================ 
+	Backgrounds
+============================ */

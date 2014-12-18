@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'Gotham light';
+  src: url('/fonts/GothamCondensed-Book.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Gotham Book';
+  src: url('/fonts/GothamCondensed-Light.otf') format('otf');
+}
+
+h1 {
+  // font-family: $title-font;
+}
+
+// branding
+
+.branding {
+  font-size: 5rem;
+  line-height: 7rem;
+  text-align: center;
+  margin: 0;
+  @include breakpoint(medium) {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+}
+
+.vcard {
+  text-align: center;
+  margin-bottom: 1rem ;
+  h2 {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    @include breakpoint(medium) {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+}
+
+.dot {
+  font-size: 4rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.street-address, .city {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  @include breakpoint(medium) {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+// Clients
+
+.clients {
+  h3 {
+    font-size: 2rem;
+    font-weight: $heavy-text;
+  }
+  h4 {
+    display: inline-block;
+    font-size: 1.75rem;
+    line-height: 3rem;
+  }
+  a {
+    color: $black;
+    font-size: 1.75rem;
+    line-height: 3rem;
+    &:hover {
+      color: $highlight;
+    }
+  }
+}
+
+// contact
+
+.contact-title {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.contact-subtitle {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.name {
+  a {
+    color: inherit;
+    &:hover {
+      color: $highlight;
+    }
+  }
+}
+

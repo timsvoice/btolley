@@ -1,0 +1,52 @@
+*, body {
+}
+
+body {
+  background-color: $gray;
+}
+
+hr {
+	margin: 0;
+}
+
+:focus {
+	background:white;
+}
+
+.vcard {
+	border:none;
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+.hidden {
+	display: none !important;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin-top: 1rem;
+}
+
+// Clients
+
+.clients {
+  margin-top: 5rem;
+}
+
+// footer 
+
+footer { 
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  background-color: $dark-gray;
+  h2 {
+    margin-bottom: 1rem; 
+  }
+}
+
