@@ -1,11 +1,19 @@
 @font-face {
-  font-family: 'Gotham light';
-  src: url('/fonts/GothamCondensed-Book.otf') format('otf');
+  font-family: 'Gotham-Light';
+  src: url('https://s3.amazonaws.com/barbaratolley/GothamCondensed-Book.otf') format('otf');
 }
 
 @font-face {
-  font-family: 'Gotham Book';
-  src: url('/fonts/GothamCondensed-Light.otf') format('otf');
+  font-family: 'Gotham-Book';
+  src: url('https://s3.amazonaws.com/barbaratolley/GothamCondensed-Light.otf') format('otf');
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $title-font;
+}
+
+p, a, li, span {
+  font-family: $body-font;
 }
 
 h1 {
@@ -27,7 +35,8 @@ h1 {
 
 .vcard {
   text-align: center;
-  margin-bottom: 1rem ;
+  margin-bottom: 1rem;
+  font-family: $title-font;
   h2 {
     font-size: 1.75rem;
     line-height: 2.5rem;
@@ -63,11 +72,6 @@ h1 {
   }
   h4 {
     display: inline-block;
-    font-size: 1.75rem;
-    line-height: 3rem;
-  }
-  a {
-    color: $black;
     font-size: 1.75rem;
     line-height: 3rem;
     &:hover {
