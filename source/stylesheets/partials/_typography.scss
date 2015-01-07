@@ -60,8 +60,7 @@ h1 {
     font-family: $body-font;
     font-size: 2rem;
     font-weight: $heavy-text;
-    float: left;
-    clear: left;
+    display: block;
   }
   h4 {
     font-family: $body-font;
